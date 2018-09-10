@@ -4,8 +4,11 @@ Classwork02 Evaluation
 
 Nice job on this assignment, with a couple of comments:
 
-In your TargetFile.java, you are calling the write method of the
-
+In your TargetFile.java, you are calling the write method and
+passing a variable that looks like a file name.  Although you are
+actually doing the correct thing and passing the file CONTENT, the
+variable name looks like you are writing out the file name.  Use
+better naming conventions for this kind of thing....
 
 scores:
 =============================

@@ -44,7 +44,7 @@ public class IntLinkedList {
 
       public void removeAt( int index ) {
           if ( index > size -1 || index < 0 ) {
-              throw new IllegalArgumentException( "Invalid index." );
+              throw new IllegalArgumentException("Invalid index!");
           }
           Iterator newIt = getIteratorAt(index);
           Node rem = newIt.currentNode.next;

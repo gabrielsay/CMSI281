@@ -14,11 +14,12 @@ public class StackTester {
       myStack.push(30);
       myStack.push(20);
       myStack.push(10);
-
       System.out.println( "Displaying stack..." );
-      //myStack.display();
-      System.out.println( "peek() result: " + myStack.peek() );
+      myStack.display();
+      // System.out.print( "peek() result: " );
+      // myStack.peek();
       System.out.println( "getSize() result: " + myStack.getSize() );
+      System.out.println( "-----------------" );
 
       System.out.println( "Popping values..." );
       myStack.pop();
@@ -28,18 +29,21 @@ public class StackTester {
       
       System.out.println( "isEmpty() result: " + myStack.isEmpty() );
       System.out.println( "Displaying stack..." );
-      //myStack.display();
-      System.out.println( "peek() result: " + myStack.peek() );
+      myStack.display();
+      // System.out.println( "peek() result: " );
+      // myStack.peek();
       System.out.println( "getSize() result: " + myStack.getSize() );
-
+      System.out.println( "-----------------" );
+      
       myStack.pop();
       System.out.println( "isEmpty() result: " + myStack.isEmpty() );
       System.out.println( "Displaying stack..." );
-      //myStack.display();
-      System.out.println( "peek() result: " + myStack.peek() );
+      myStack.display();
+      // System.out.println( "peek() result: " );
+      // myStack.peek();
       System.out.println( "getSize() result: " + myStack.getSize() );
 
-      System.out.println( "***** TESTING COMPLETE *****");   
+      System.out.println( "***** TESTING COMPLETE *****" );   
 
    }
 }

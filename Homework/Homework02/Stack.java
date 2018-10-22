@@ -1,75 +1,47 @@
-/*
- * A series of methods for Stacks
- */
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ *  File name     :  StackCLink.java
+ *  Purpose       :  To practice working with Circular Linked Lists
+ *  @author       :  Jordyn, Alvin, Gabe
+ *  Date written  :  2018-10-18
+ *  Description   :  This implements the CLink and CLinkedList to imitate a stack.
+ *  Warnings      :  None
+ *  Exceptions    :  None
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ *  Revision History
+ *  ---------------
+ *            Rev      Date     Modified by:  Reason for change/modification
+ *           -----  ----------  ------------  -----------------------------------------------------------
+ *  @version 1.0.0  2018-10-20  Gabe Say        Initial set up
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+public class StackCLink {
 
-public class Stack {
+   CLinkedList myCStack;
+   int lastItem;
 
-   private class Link {
-   private long lData;
-   private Link next;
-
-      private Link( long d ) {
-         lData = d;
-      }
-
-      private void displayLink() {
-         System.out.println( lData + " " );
-      }
-   }
-//----------------------------------------------
-   private Link first, current;
-   private int nItems;
-
-   public Stack() {
-      first = null;
-      current = null;
-      nItems = 0;
+   public StackCLink() {
+      myCStack = new CLinkedList();
    }
 
-   public boolean isEmpty() {
-      return( first == null );
+   public void push(int p) {
+     myCStack.insert(p);
+     lastItem = p;
    }
 
-   public int getSize() {
-      return nItems;
+   public void pop() {
+     //int delItem = lastItem;
+     myCStack.delete();
    }
 
-   public void push( long value ) {
-      Link linkToAdd = new Link( value );
-      if( isEmpty() ) {
-         first = linkToAdd;
-      } else {
-         linkToAdd.next = first;
-         first = linkToAdd;
-      }
-      nItems++;
+   public void peek() {
+     myCStack.getItems();
    }
 
-   public long pop() {
-      long temp = first.lData;
-      if( isEmpty() ) {
-         throw new IllegalArgumentException( "Error: popping from empty stack" );
-      } else {
-         first = first.next;
-      }
-      nItems--;
-      return( temp );
-   }
+   public static void main(String[] args){
+     StackCLink testStack = new StackCLink();
 
-   public long peek() {
-      if( isEmpty() ) {
-         throw new IllegalArgumentException( "Error: popping from empty stack" );
-      } else {
-         return( first.lData );
-      }
-   }
-
-   public void display() {
-      Link current = first;
-      while( current != null ) {
-         current.displayLink();
-         current = current.next;
-      }
-      System.out.println("");
+     System.out.println("\n --------Test 1--------\n");
+     testStack.push(12);
+     testStack.push(4);
+     testStack.push(51);
    }
 }

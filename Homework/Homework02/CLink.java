@@ -1,89 +1,117 @@
-class CLink {
-   public long lData;
-   public CLink next;
-   
-   public CLink( long value ) { 
-      lData = value; 
-   }
-   
-   public void displayLink() { 
-      System.out.print( lData + " " ); 
-   }
-}
+/** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ *  File name     :  CLink.java
+ *  Purpose       :  To practice working with Circular Linked Lists
+ *  @author       :  Jordyn, Alvin, Gabe
+ *  Date written  :  2018-10-18
+ *  Description   :  This implements the
+ *  Warnings      :  None
+ *  Exceptions    :  None
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ *  Revision History
+ *  ---------------
+ *            Rev      Date     Modified by:  Reason for change/modification
+ *           -----  ----------  ------------  -----------------------------------------------------------
+ *  @version 1.0.0  2018-10-15  Jordyn        Initial set up
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+ class CLink
+ {
+	 public long lData;
+	 public CLink next;
 
+	 public CLink(long value) {
+		 lData = value;
+	 }
+
+	public void displayLink() {
+		System.out.print(lData + " "); }
+	}
+//-----------------------------End of CLink/Start of CLinkedList.java-----------------------------------------
 class CLinkedList {
-   private CLink current;
-   private int nItems;        //keeps track of length of the list
-   
-   public CLinkedList() {
-      current = null;
-      nItems = 0;
-   }
-   
-   public boolean isEmpty() { 
-      return current == null; 
-   }
-   
-   public long getItems() { 
-      return nItems; 
-   }
-   
-   public void step() {
-      current = current.next;
-   }
-   
-   public void insert( long value ) {   //inserts new link after current link 
-      if( isEmpty() ) {
-         current = new CLink( value );
-         current.next = current;
-      } else {
-         CLink newLink = new CLink( value );
-         newLink.next = current.next;
-         current.next = newLink;
-      }
-      nItems++;
-   }
-   
-   public CLink find( long value ) {
-      for( int i = 0; i < nItems; i++ ) {
-         if( current.lData == value ) {
-            System.out.println( "Found " + value );
-            return current;
-         } else {
-            step();
-         } 
-      }
-      System.out.println( "Couldn't find " + value + "." );
-      return null;
-   }
-   
-   public CLink delete() {
-      if( isEmpty() ) {
-         System.out.println( "List is empty." );
-         return null;
-      } else if( nItems == 1 ) {
-         current = null;
-         nItems = 0;
-         return null;
-      } else {
-         CLink temp = current.next;
-         current.next = current.next.next;
-         nItems--;
-         return temp;
-      }
-   }
-   
-   public CLink peek() {
-      return current;
-   }
-   
-   public void display() {
-      System.out.print( "Circular List (from current): " );
-      CLink index = current;
-      for( int i = 0; i < nItems; i++ ) {
-         System.out.print( index.lData + " " );
-         index = index.next;
-      }
-      System.out.println( "" );
-   }
+	private CLink current;
+	private int nItems; //keeps track of length of the list
+
+	public CLinkedList() {
+		current = null;
+		nItems = 0;
+	}
+
+	public boolean isEmpty() {
+		return current==null;
+	}
+
+	public long getItems() {
+		return nItems;
+	}
+
+	public void step() {
+		current = current.next;
+	}
+
+	public void insert(long value) {  //inserts new link after current link
+		if(isEmpty()) {
+			current = new CLink(value);
+			current.next = current;
+		} else {
+			CLink newLink = new CLink(value);
+			newLink.next = current.next;
+			current.next = newLink;
+		} nItems++;
+	}
+
+	public CLink find(long value) {
+		for(int i = 0; i < nItems; i++) {
+			if(current.lData == value) {
+				System.out.println("Found " + value);
+				return current;
+			} else step();
+		} System.out.println("Couldn't find " + value + ".");
+		  return null;
+	}
+
+	public CLink delete() {
+		if(isEmpty()) {
+			System.out.println("List is empty.");
+			return null;
+		} else if(nItems == 1) {
+			current = null;
+			nItems = 0;
+			return null;
+		} else {
+			CLink temp = current.next;
+			current.next = current.next.next;
+			nItems--;
+			return temp;
+		}
+	}
+
+	public CLink peek() {
+		return current;
+	}
+
+	public void display() {
+		System.out.print("Circular List (from current): ");
+		CLink index = current;
+		for(int i = 0; i < nItems; i++) {
+			System.out.print(index.lData + " ");
+			index = index.next;
+		} System.out.println("");
+	}
+}
+//-----------------------------End of CLinkedList/Start of CircularApp.java-----------------------------------------
+class CircularApp {
+	public static void main(String[] args) {
+		CLinkedList theList = new CLinkedList();
+
+		theList.insert(1);
+		theList.insert(2);
+		theList.insert(3);
+		theList.insert(4);
+		theList.display();
+
+		theList.delete();
+		theList.display();
+		theList.delete();
+		theList.display();
+
+	}
 }

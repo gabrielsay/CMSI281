@@ -3,85 +3,57 @@
  */
 
 public class DequeTester {
-   public static void main( String[] args ) {
-      Deque myDeque = new Deque(10);
+    public static void main(String args[]) {
+      Deque testDeque = new Deque(10);
 
-      System.out.println( "Testing isEmpty(): expect TRUE" );
-      System.out.println( "isEmpty() result: " + myDeque.isEmpty() );
-      System.out.println( "size() result: " + myDeque.size() );
+      System.out.println("\n---Testing insertLeft() and removeLeft()---\n");
+      System.out.println("Inserting in left...\n");
 
-      System.out.println( "-------------------------" );
-      System.out.println( "Inserting left..." );
-      myDeque.insertLeft(5);
-      myDeque.insertLeft(4);
-      myDeque.insertLeft(3);
-      myDeque.insertLeft(2);
-      myDeque.insertLeft(1);
+      testDeque.insertLeft(6);
+      testDeque.insertLeft(18);
+      testDeque.insertLeft(27);
+      testDeque.display();
 
-      System.out.println( "Displaying deque..." );
-      //myDeque.display();
-      System.out.println( "Testing isFull(): expect FALSE" );
-      System.out.println( "isFull() result: " + myDeque.isFull() );
-      System.out.println( "size() result: " + myDeque.size() );
+      System.out.println("Removing from left...\n");
 
-      System.out.println( "-------------------------" );
-      System.out.println( "Inserting right..." );
-      myDeque.insertRight(6);
-      myDeque.insertRight(7);
-      myDeque.insertRight(8);
-      myDeque.insertRight(9);
-      myDeque.insertRight(10);
+      testDeque.removeLeft();
+      testDeque.display();
+      testDeque.removeLeft();
+      testDeque.display();
 
-      System.out.println( "Displaying deque..." );
-      //myDeque.display();
-      System.out.println( "peekFront() result: " + myDeque.peekFront() );
-      System.out.println( "Testing isFull(): expect TRUE" );
-      System.out.println( "isFull() result: " + myDeque.isFull() );
-      System.out.println( "size() result: " + myDeque.size() );
+      testDeque.insertLeft(41);
+      testDeque.insertLeft(2);
+      testDeque.insertLeft(37);
+      testDeque.insertLeft(21);
+      testDeque.insertLeft(196);
+      System.out.println("Left- \n");
+      testDeque.display();
+      System.out.println("-Right");
 
-      System.out.println( "-------------------------" );
-      System.out.println( "Removing left..." );
-      myDeque.removeLeft();
-      myDeque.removeLeft();
-      myDeque.removeLeft();
+      System.out.println("\n---Testing insertRight() and removeRight()---\n");
+      System.out.println("Inserting in right...\n");
 
-      System.out.println( "Displaying deque..." );
-      //myDeque.display();
-      System.out.println( "peekFront() result: " + myDeque.peekFront() );
-      System.out.println( "Testing isFull(): expect FALSE" );
-      System.out.println( "isFull() result: " + myDeque.isFull() );
-      System.out.println( "size() result: " + myDeque.size() );
+      testDeque.insertRight(32);
+      testDeque.insertRight(8);
+      testDeque.insertRight(93);
+      System.out.println("Left- \n");
+      testDeque.display();
+      System.out.println("-Right");
 
-      System.out.println( "-------------------------" );
-      System.out.println( "Removing right..." );
-      myDeque.removeRight();
-      myDeque.removeRight();
-      myDeque.removeRight();
+      System.out.println("\nRemoving from right...\n");
 
-      System.out.println( "Displaying deque..." );
-      //myDeque.display();
-      System.out.println( "peekFront() result: " + myDeque.peekFront() );
-      System.out.println( "Testing isFull(): expect FALSE" );
-      System.out.println( "isFull() result: " + myDeque.isFull() );
-      System.out.println( "size() result: " + myDeque.size() );
+      testDeque.removeRight();
+      testDeque.removeRight();
+      testDeque.display();
 
-      myDeque.removeLeft();
-      myDeque.removeLeft();
-      myDeque.removeLeft();
-      myDeque.removeLeft();
-      myDeque.removeRight();
-      myDeque.removeRight();
-      myDeque.removeRight();
-      myDeque.removeRight();
+      testDeque.insertRight(234);
+      testDeque.insertRight(3);
+      testDeque.insertRight(29);
+      testDeque.insertRight(12);
+      testDeque.insertRight(31);
+      System.out.println("Left- \n");
+      testDeque.display();
+      System.out.println("-Right");
 
-      System.out.println( "Testing isEmpty(): expect TRUE" );
-      System.out.println( "isEmpty() result: " + myDeque.isEmpty() );
-      System.out.println( "size() result: " + myDeque.size() );
-
-      // System.out.println( "Attempt to remove item: expect error" );
-      // myDeque.removeLeft();
-
-      System.out.println( "***** TESTING COMPLETE *****");
-
-   }
+    }
 }

@@ -33,15 +33,39 @@ public class StackCLink {
    }
 
    public void peek() {
-     myCStack.getItems();
+     myCStack.display();
    }
 
    public static void main(String[] args){
      StackCLink testStack = new StackCLink();
 
-     System.out.println("\n --------Test 1--------\n");
+     System.out.println("\n --------Test Push()--------\n");
      testStack.push(12);
+     testStack.peek();
      testStack.push(4);
+     testStack.peek();
      testStack.push(51);
+     testStack.peek();
+
+     System.out.println("\n --------Test Pop() and Peek()--------\n");
+     testStack.pop();
+     testStack.peek();
+     testStack.pop();
+     testStack.peek();
+     testStack.pop();
+     testStack.peek();
+
+     System.out.println("\n --------Final Test--------\n");
+     testStack.push(356);
+     testStack.push(81);
+     testStack.pop();
+     testStack.push(12);
+     testStack.push(912);
+     testStack.push(123);
+     testStack.peek();
+     testStack.pop();
+     testStack.peek();
+     testStack.pop();
+     testStack.peek();
    }
 }

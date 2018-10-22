@@ -1,11 +1,10 @@
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  *  File name     :  Queue.java
- *  Purpose       :  To practice working with Nodes
- *  @author       :  Gabe Say
+ *  Purpose       :  To practice working with Queues
+ *  @author       :  Gabe, Alvin, Jordyn
  *  Date written  :  2018-10-15
- *  Description   :  This implements the insertAt() which takes an integer index location and a data value
- *                   and inserts a node with that data value BEFORE the node at that index. The removeAt()
- *                   method takes an integer index location ONLY, and removes the noce at that index.
+ *  Description   :  This program is meant to model a queue using the insert, remove, and
+ *                   printQ methods (i.e. FiFo).
  *  Warnings      :  None
  *  Exceptions    :  IllegalArgumentException when the input arguments are not allowed
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -15,7 +14,7 @@
  *           -----  ----------  ------------  -----------------------------------------------------------
  *  @version 1.0.0  2018-10-15  Gabriel Say   Initial set up
  *  @version 1.0.1  2018-10-17  Alvin Lai     Edited remove() and printQ()
- *  
+ *
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 // Queue.java
 // Demonstrates queue
@@ -30,7 +29,7 @@ public class Queue{
 //--------------------------------------------------------------
    public Queue( int s ) {               // constructor
       maxSize = s;
-      queArray = new long[maxSize]; 
+      queArray = new long[maxSize];
       front = 0;
       rear = -1;
       nItems = 0;
@@ -87,3 +86,31 @@ public class Queue{
    }
 //--------------------------------------------------------------
 }
+////////////////////////////////////////////////////////////////
+// class QueueApp {
+//    public static void main( String[] args ){
+//       Queue theQueue = new Queue(5);
+
+//          theQueue.insert(10);
+//          theQueue.insert(20);
+//          theQueue.insert(30);
+//          theQueue.insert(40);
+
+//          theQueue.remove();
+//          theQueue.remove();
+//          theQueue.remove();
+
+//          theQueue.insert(50);
+//          theQueue.insert(60);
+//          theQueue.insert(70);
+//          theQueue.insert(80);
+
+//          while( !theQueue.isEmpty() ) {
+//          long n = theQueue.remove(); // (40, 50, 60, 70, 80)
+//          System.out.print(n);
+//          System.out.print( " " );
+//          }
+
+//        System.out.println( "" );
+//    } // end main()
+// } // end class QueueApp

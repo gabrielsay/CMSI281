@@ -31,16 +31,16 @@ public class CLinkTester {
 
       myList.display();
       System.out.println( "---------------------------------------" );
-      System.out.println( "Item at index 1: " + myList.find(10) );
-      System.out.println( "Item at index 2: " + myList.find(20) );
-      System.out.println( "Item at index 3: " + myList.find(30) );
-      System.out.println( "Item at index 4: " + myList.find(40) );
-      System.out.println( "Item at index 5: " + myList.find(50) );
-      System.out.println( "Item at index 6: " + myList.find(60) );
-      System.out.println( "Item at index 7: " + myList.find(70) );
-      System.out.println( "Item at index 5: " + myList.find(80) );
-      System.out.println( "Item at index 6: " + myList.find(90) );
-      System.out.println( "Item at index 7: " + myList.find(100) );
+      System.out.println( "Finding value 10: " + myList.find(10) );
+      System.out.println( "Finding value 20: " + myList.find(20) );
+      System.out.println( "Finding value 30: " + myList.find(30) );
+      System.out.println( "Finding value 40: " + myList.find(40) );
+      System.out.println( "Finding value 50: " + myList.find(50) );
+      System.out.println( "Finding value 60: " + myList.find(60) );
+      System.out.println( "Finding value 70: " + myList.find(70) );
+      System.out.println( "Finding value 80: " + myList.find(80) );
+      System.out.println( "Finding value 90: " + myList.find(90) );
+      System.out.println( "Finding value 100: " + myList.find(100) );
       System.out.println( "---------------------------------------" );
       // System.out.println( "Item at index 8: " + myList.find(8) ); // should display item at index 0
 

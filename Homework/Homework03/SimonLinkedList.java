@@ -19,6 +19,12 @@ public class SimonLinkedList {
    
    private Node head;
    public  int  size;
+
+   //-----------------------------------------------------------------
+   SimonLinkedList() {
+      head = null;
+      size = 0;
+   }
    //-----------------------------------------------------------------
    private class Node {
 
@@ -71,11 +77,6 @@ public class SimonLinkedList {
       return it;
    }
    //-----------------------------------------------------------------
-   SimonLinkedList() {
-      head = null;
-      size = 0;
-   }
-   //-----------------------------------------------------------------
    public int getSize() {
       return size;
    }
@@ -107,5 +108,12 @@ public class SimonLinkedList {
       size--;
    }
    //-----------------------------------------------------------------
-   // TODO: clear list
+   public void clearList() {
+      head = null;
+   }
+   
+   /* 
+    * TO-DO: handle exceptions when inserting/removing
+    */
+
 }

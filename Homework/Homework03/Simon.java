@@ -1,6 +1,7 @@
 
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- *  File name     :  Simon.java
+ *  File name     :  oddEvenSort.java
+ *  Purpose       :  To practice using sorting systems and sorting by using the odd-even sort method
  *  @author       :  Alvin, Jordyn, Gabe
  *  Date written  :  2018-11-06
  *  Description   :  Java implementation of the game "Simon" which uses SimonLinkedList.java
@@ -91,6 +92,7 @@ public class Simon {
 
       prependColor();
       System.out.println( "You are now playing Simon!" );
+      System.out.println( "NOTE: Please put spaces after every letter you enter!" );
       System.out.println( "Pay attention to the colors that show up.");
       printInterval( 2000 );
 
@@ -105,6 +107,10 @@ public class Simon {
          printInterval( 2000 );
       } else {
          System.out.println( "Incorrect! Try again next time." );
+      }
+
+      if( compare(userGuess) ) {
+         playSimon();
       }
    }
 

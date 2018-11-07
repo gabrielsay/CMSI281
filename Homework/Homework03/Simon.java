@@ -53,4 +53,13 @@ public class Simon {
       }
    }
 
+   /**
+      flashList() is supposed to display the most recent list for some specified interval
+      After that interval is up, it will delete the list from the console window
+   **/
+   public void flashList() {
+      String displayList, deleteList = "";
+
+   }
+
 }

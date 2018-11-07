@@ -28,7 +28,7 @@ public class Simon {
    public String listToString() {
       String listString = "";
       for ( int i = 0; i < list.getSize(); i++ ) {
-         listString += list.getIteratorAt(i).getCurrentString();
+         listString += ( list.getIteratorAt(i).getCurrentString() + " " );
       }
       return listString;
    }
@@ -55,10 +55,18 @@ public class Simon {
 
    /**
       flashList() is supposed to display the most recent list for some specified interval
-      After that interval is up, it will delete the list from the console window
+      After that interval is up, it will delete the list
    **/
    public void flashList() {
-      String displayList, deleteList = "";
+      String listString = "";
+      String deleteList = "";
+
+      listString = listToString();                       // Turns list into string
+
+      for ( int i = 0; i < listString.length(); i++ ) {  // Displays characters on specified interval
+         System.out.println( listString.charAt(i) );
+         printInterval( 1000 );
+      }
 
    }
 

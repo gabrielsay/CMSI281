@@ -24,4 +24,12 @@ public class Simon {
       list.prepend( newColor() );
    }
 
+   // String representation of the list which contains all the colors
+   public String listToString() {
+      String listString = "";
+      for ( int i = 0; i < list.getSize(); i++ ) {
+         listString += list.getIteratorAt(i).getCurrentString();
+      }
+      return listString;
+   }
 }

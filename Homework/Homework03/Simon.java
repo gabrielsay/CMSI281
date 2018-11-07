@@ -1,7 +1,6 @@
 
 /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- *  File name     :  oddEvenSort.java
- *  Purpose       :  To practice using sorting systems and sorting by using the odd-even sort method
+ *  File name     :  Simon.java
  *  @author       :  Alvin, Jordyn, Gabe
  *  Date written  :  2018-11-06
  *  Description   :  Java implementation of the game "Simon" which uses SimonLinkedList.java

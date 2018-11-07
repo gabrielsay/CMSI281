@@ -43,4 +43,14 @@ public class Simon {
       }
       return match;
    }
+
+   // Prints elements on specified interval/delay time
+   public void printInterval( int delay ) {
+      try {
+         Thread.sleep( delay );
+      } catch( InterruptedException e ) {
+         Thread.currentThread().interrupt();
+      }
+   }
+
 }

@@ -15,8 +15,8 @@ public class Simon {
    // Generates a new color randomly
    public String newColor() {
       Random rand = new Random();
-      int index = rand.nextInt( letterArray.length );
-      return letterArray[index];
+      int i = rand.nextInt( letterArray.length );
+      return letterArray[i];
    }
 
    // Prepends new color to list
@@ -53,21 +53,27 @@ public class Simon {
       }
    }
 
-   /**
-      flashList() is supposed to display the most recent list for some specified interval
-      After that interval is up, it will delete the list
-   **/
+   // Flashes list in console for brief interval, then clears the line
    public void flashList() {
       String listString = "";
-      String deleteList = "";
+      String  blankLine = "";
 
       listString = listToString();                       // Turns list into string
 
       for ( int i = 0; i < listString.length(); i++ ) {  // Displays characters on specified interval
-         System.out.println( listString.charAt(i) );
+         System.out.print( listString.charAt(i) );
          printInterval( 1000 );
       }
 
+      for ( int i = 0; i < listString.length(); i++ ) {
+         blankLine += "\b";
+      }
+
+      for ( int i = 0; i < listString.length(); i++ ) {
+         blankLine += " ";
+      }
+
+      System.out.println( blankLine );
    }
 
 }

@@ -54,7 +54,7 @@ public class Simon {
       return match;
    }
 
-   // Prints elements on specified interval/delay time
+   // Prints on specified interval/delay time
    public void printInterval( int delay ) {
       try {
          Thread.sleep( delay );
@@ -86,4 +86,31 @@ public class Simon {
       System.out.println( blankLine );
    }
 
+   public void playSimon() {
+      Scanner input = new Scanner( System.in );
+      String userGuess;
+
+      prependColor();
+      System.out.println( "You are now playing Simon!" );
+      System.out.println( "Pay attention to the colors that show up.");
+      printInterval( 2000 );
+
+      flashList();
+      printInterval( 1000 );
+
+      System.out.println( "Type the letters in the order they appeared." );
+      userGuess = input.nextLine().toUpperCase();
+
+      if( compare(userGuess) ) {
+         System.out.println( "Correct! Next round... Pay Attention!" );
+         printInterval( 2000 );
+      } else {
+         System.out.println( "Incorrect! Try again next time." );
+      }
+   }
+
+   public static void main( String[] args ) {
+      Simon gameList = new Simon();
+      gameList.playSimon();
+   }
 }

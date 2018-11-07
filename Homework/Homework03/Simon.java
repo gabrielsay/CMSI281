@@ -32,4 +32,15 @@ public class Simon {
       }
       return listString;
    }
+
+   // Compares user's input to list
+   public boolean compare( String guess ) {
+      boolean match;
+      if( guess.equals(listToString()) ) {
+         match = true;
+      } else {
+         match = false;
+      }
+      return match;
+   }
 }

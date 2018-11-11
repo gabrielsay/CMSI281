@@ -1,0 +1,67 @@
+
+Homework03 Evaluation
+======================
+
+Pretty nice work on this assignment!
+Here are a couple of observations and comments:
+
+Remember that class names should start with an upper-case
+letter.  That is a convention that all Java coders use.  It's
+fine to start METHOD names with lower case, but not CLASS
+names.  Don't forget that applies to the file name as well.
+
+I know the book does it, but it's not good coding practice
+to put long lines of //---------------------- between the
+blocks.  Use JavaDoc style instead, like:
+
+/**
+ * method to give example
+ * @param 
+ * @param
+ * @return
+ * @throws
+ */
+
+ The Simon game works, but displays the letters in reverse
+ order of what is expected.  They should be added to the END
+ of the line, not the START of the line.  Also, it's a bit
+ confusing to have to enter a space after every letter, but
+ you DO tell the user to do that, so it's probably OK.
+
+
+
+scores:
+=============================
+XXXXX-Sorter.java
+   oddEvenSort implemented                   [1 pt.]
+   compiles                                  [1 pt.]
+   works as advertised                       [1 pt.]
+
+SimonGame.java
+   randomized array                          [1 pt.]
+   display/erase sequences                   [1 pt.]
+   check user's guess against array          [1 pt.]
+   increment letter count each iteration     [1 pt.]
+   play again message on incorrect entry     [1 pt.]
+   compiles                                  [1 pt.]
+   works as advertised                       [1 pt.]
+
+HuffmanCoding.java
+   count character occurrences               [0 pt.]
+   use some sort of queue to build tree      [0 pt.]
+   tree constructed correctly                [0 pt.]
+   message encoded correctly                 [0 pt.]
+   message decoded correctly                 [0 pt.]
+   compiles                                  [0 pt.]
+   works as advertised                       [0 pt.]
+
+Coding style                                 [1 pt.]
+Tests written to test all classes            [1 pt.]
+Headers in all files                         [1 pt.]
+
+Total credit is 13 for Sorter and either Simon or Huffman
+ extra credit is 7 points for other of Simon or Huffman
+-------------------------
+ Grand total is 20 points for all three
+
+you got 13 out of 13 which is 100% which is an A-plus

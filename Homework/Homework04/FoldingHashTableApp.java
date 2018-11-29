@@ -17,6 +17,17 @@
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 import java.io.*;
 
+class HashDataItem {
+   private int keyVal;
+   public HashDataItem( int value ) {
+      keyVal = value;
+   }
+
+   public int getKey() {
+      return keyVal;
+   }
+}
+
 class FoldingHashTable {
    private HashDataItem[] hashArray;
    private int arraySize;
@@ -107,7 +118,7 @@ class FoldingHashTableApp {
       n = getInt();
       keysPerCell = 10;
       
-      HashTable theHashTable = new HashTable( size );
+      FoldingHashTable theHashTable = new FoldingHashTable( size );
       
       for( int j = 0; j < n; j++ ) {
          aKey = (int)( java.lang.Math.random() * keysPerCell * size );

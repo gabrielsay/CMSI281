@@ -13,6 +13,7 @@
  *           -----  ----------  ------------  -----------------------------------------------------------
  *  @version 1.0.0  2018-11-26  Jordyn        Initial Setup
  *  @version 1.0.1  2018-11-28  Alvin         Fixed formatting
+ *  @version 1.0.2  2018-11-28  Alvin         Added tests
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 import java.io.*;
 
@@ -122,42 +123,43 @@ class Heap {
    public void displayHeap() {
       System.out.print( "heapArray: " );  
       for( int m = 0; m < currentSize; m++ ) {
-         if(heapArray[m] != null)
+         if( heapArray[m] != null )
             System.out.print( heapArray[m].getKey() + " ");
          else
             System.out.print( "-- ");         
       }
       System.out.println();
 
-      int nBlanks = 32;
-      int itemsPerRow = 1;
-      int column = 0;
-      int j = 0;                          
-      String dots = "...............................";
-      System.out.println( dots + dots );     
+      // int nBlanks = 32;
+      // int itemsPerRow = 1;
+      // int column = 0;
+      // int j = 0;                          
+      // String dots = "...............................";
+      // System.out.println( dots + dots );     
 
-      while( currentSize > 0 ) {
-         if( column == 0 )                  
-            for( int k = 0; k < nBlanks; k++ ) {
-               System.out.print(' ');               
-            } 
-         System.out.print(heapArray[j].getKey());
+      // while( currentSize > 0 ) {
+         // if( column == 0 ) {
+         //    for( int k = 0; k < nBlanks; k++ ) {
+         //       System.out.print(' ');               
+         //    }             
+         // }                 
+      //    System.out.print( heapArray[j].getKey() );
 
-         if( ++j == currentSize ) {
-            break;
-         }
-         if( ++column == itemsPerRow ){
-            nBlanks /= 2;               
-            itemsPerRow *= 2;            
-            column = 0;               
-            System.out.println();       
-         } else {                             
-            for( int k = 0; k < nBlanks * 2 - 2; k++ ) {
-               System.out.print(' ');     
-            }
-         } 
-      System.out.println( "\n" + dots + dots ); 
-      } 
+      //    if( ++j == currentSize ) {
+      //       break;
+      //    }
+      //    if( ++column == itemsPerRow ){
+      //       nBlanks /= 2;               
+      //       itemsPerRow *= 2;            
+      //       column = 0;               
+      //       System.out.println();       
+      //    } else {                             
+      //       for( int k = 0; k < nBlanks * 2 - 2; k++ ) {
+      //          System.out.print(' ');     
+      //       }
+      //    } 
+      // System.out.println( "\n" + dots + dots ); 
+      // } 
    }
 }
 
@@ -193,22 +195,67 @@ class PriorityQ {
    public boolean isFull() {
       return ( nItems == maxSize );
    }
+
+   public int getMaxSize() {
+      return maxSize;
+   }
+
+   public void display() {
+      theHeap.displayHeap();
+   }
 }
 
 public class PriorityQApp {
    public static void main( String[] args ) {
+
+      System.out.println( "***** TESTING PriorityQ.java *****" );
       PriorityQ thePQ = new PriorityQ(5);
+      System.out.println( "MAX SIZE OF HEAP: " + thePQ.getMaxSize() );
+
+      System.out.println( "Inserting items to heap..." );
       thePQ.insert(30);
       thePQ.insert(50);
       thePQ.insert(10);
       thePQ.insert(40);
       thePQ.insert(20);
 
+      thePQ.display();
+      System.out.println( "Is heap full?: " + thePQ.isFull() );
+
+      System.out.print( "Items removed: " );
       while( !thePQ.isEmpty() ) {
          int item = thePQ.remove();
          System.out.print( item + " " );
       }
       System.out.println( "" );
+      System.out.println( "Is heap empty?: " + thePQ.isEmpty() );
+
+      System.out.println( "Inserting items to heap..." );
+      thePQ.insert(1);
+      thePQ.insert(39);
+      thePQ.insert(6);
+
+      
+      System.out.println( "Is heap full?: " + thePQ.isFull() );
+      System.out.println( "Is heap empty?: " + thePQ.isEmpty() );
+
+      System.out.println( "Inserting items to heap..." );
+      thePQ.insert(1998);
+      thePQ.insert(420);
+
+      System.out.println( "Is heap full?: " + thePQ.isFull() );
+      System.out.println( "Is heap empty?: " + thePQ.isEmpty() );
+
+      System.out.print( "Items removed: " );
+      while( !thePQ.isEmpty() ) {
+         int item = thePQ.remove();
+         System.out.print( item + " " );
+      }
+      System.out.println( "" );
+      System.out.println( "Is heap empty?: " + thePQ.isEmpty() );
+
+      System.out.println( "***** TESTING PriorityQ.java COMPLETE *****" );      
+
    } 
 }
 

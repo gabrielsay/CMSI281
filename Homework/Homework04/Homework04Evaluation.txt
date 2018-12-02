@@ -1,0 +1,79 @@
+
+Homework04 Evaluation
+======================
+
+Pretty good job on this assignment...
+Here are a couple of observations and comments:
+
+Your code looks great and thanks for doing headers!
+
+These were from Gabe's repo.
+
+Everything compiles on its own, but if I try to compile them all at
+one time with "javac *.java" I get a bunch of errors because there
+are two "Node" classes that conflict with each other.
+
+InOrderTreeApp works, but I'm not sure it's quite correct.  Close
+enough for rock and roll, though it's hard to tell because the tree
+representation is a bit off...
+
+Nice work on the Priority Queue.  Testing is very good and I can
+easily tell what is being tested by the output!  Nice...
+
+String Hasher has a menu problem -- only delete works when I enter
+the letter 'd', and all the others tell me 'Invalid entry!'.  I had
+to look at the code to find that you are using "a, b, c, d" instead
+of what should be "s, i, d, f".  It does work after that, however,
+the premise was to hash strings and insert the STRING values into the
+table, NOT REAL NUMBERS.  I'll have to give you only 1/2 credit on
+the hashing function for that reason.  That may be the problem which
+causes the delete method to NOT take out duplicate values from the
+table.
+
+FoldingHashTable doesn't seem to work.  I start it with a table size
+of 193 like with everyone else's, but any number I enter for the set
+of starting values causes an exception.  The code is there, but it
+doesn't work, so I'll give you 1/2 credit on that one.
+
+
+scores:
+=============================
+Tree Traverser
+   inOrderTraverser method implemented       [1 pt.]
+   2 test sets with at least minimal nodes   [2 pt.]
+   produces proper sequences                 [2 pt.]
+
+Priority Queue
+   Queue creation works correctly            [1 pt.]
+   insertion works correctly                 [1 pt.]
+   isFull() works correctly                  [1 pt.]
+   isEmpty() works correctly                 [1 pt.]
+   removal() works correctly                 [1 pt.]
+   heap representation works correctly       [1 pt.]
+
+Linear Probing String Hasher
+   menu works                                [0.5 pt.]
+   shows contents                            [1 pt.]
+   hash table created correctly              [1 pt.]
+   insertion works correctly                 [1 pt.]
+   linear probing works correctly            [0.5 pt.]
+   deletion works correctly                  [0.5 pt.]
+   finding works correctly                   [1 pt.]
+
+Digit Folding Hasher
+   menu works                                [0.5 pt.]
+   shows contents                            [0.5 pt.]
+   insertion works correctly                 [0.5 pt.]
+   linear probing works correctly            [0.5 pt.]
+   deletion works correctly                  [0.5 pt.]
+   finding works correctly                   [0.5 pt.]
+
+Coding style                                 [1 pt.]
+Tests written to test all classes            [1 pt.]
+Headers in all files                         [4 pt.]
+
+Total credit is 30 points
+-------------------------
+
+you got 25.5 out of 30 which is 85.0% which is a solid B.
+
